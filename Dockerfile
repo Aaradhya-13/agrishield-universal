@@ -12,14 +12,14 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy all your application files from the root directly into the container
+# Copy all application files directly from your flat layout
 COPY main.py .
 COPY pipeline.py .
 COPY classifier.py .
 COPY index.html .
 
-# Expose the dynamic port
+# Expose port
 EXPOSE 8000
 
-# Start command (Now pointing straight to main:app in the root)
+# Start command pointing straight to your flat main.py layout
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
