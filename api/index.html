@@ -242,7 +242,8 @@
 </div>
  
 <script>
-  const API_ENDPOINT = "http://localhost:8000/api/analyze";
+  // Changed to relative route to allow smooth deployment on Render domains
+  const API_ENDPOINT = "/api/analyze";
  
   const dropzone      = document.getElementById('dropzone');
   const fileInput     = document.getElementById('fileInput');
@@ -425,4 +426,3 @@
  
 </body>
 </html>
- 

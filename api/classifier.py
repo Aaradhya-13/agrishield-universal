@@ -35,3 +35,5 @@ def identify_crop_type(image_bytes: bytes) -> str:
         
     except Exception:
         return "Fruit / Vegetable"
+    # Alias to match what api/main.py is looking to call
+classify = identify_crop_type
