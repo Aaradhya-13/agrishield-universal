@@ -18,8 +18,8 @@ COPY pipeline.py .
 COPY classifier.py .
 COPY index.html .
 
-# Expose port
-EXPOSE 8000
+# Tell Render what the default port is, but read the dynamic variable at runtime
+EXPOSE 10000
 
-# Start command pointing straight to your flat main.py layout
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start command pointing straight to your flat main.py layout with dynamic port matching
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-10000}"]
