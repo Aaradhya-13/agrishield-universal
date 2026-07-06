@@ -1,0 +1,11 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+opencv-python-headless==4.10.0.84
+numpy==1.26.4
+pydantic==2.10.4
+
+# If api/classifier.py depends on an ML framework (torch, tensorflow,
+# scikit-learn, etc.), add it here too -- it isn't included by default
+# since this project's classifier implementation wasn't part of this
+# handoff.
