@@ -18,8 +18,8 @@ COPY pipeline.py .
 COPY classifier.py .
 COPY index.html .
 
-# Tell Render what the default port is, but read the dynamic variable at runtime
+# Expose generic port mapping layer
 EXPOSE 10000
 
-# Start command pointing straight to your flat main.py layout with dynamic port matching
+# Start command with runtime dynamic port mapping to satisfy cloud routers
 CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-10000}"]
